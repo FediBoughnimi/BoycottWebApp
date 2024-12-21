@@ -1,0 +1,67 @@
+<div class="home-page">
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a (click)="loginWithKeycloak()">LogIn</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <h1>Solidarity with Palestine</h1>
+            <p>Boycotting products that support injustice is a powerful way to stand for justice and human rights. By choosing to avoid these products, we make our voices heard and show solidarity with those who are oppressed. Every small action counts toward creating a more just and equal world for all.</p>
+            <a href="#contact" class="cta-btn">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Chatbot Section -->
+        <!-- Other sections of the page -->
+    
+        <div [ngClass]="{'chatbot-container': true, 'visible': isVisible}">
+            <div class="chatbot-header">
+            </div>
+            <div class="chatbot-body">
+                <app-chatbot></app-chatbot>
+            </div>
+        </div>
+    
+        <!-- Chatbot Emoji Button -->
+        <div class="chatbot-emoji" (click)="toggleChatbot()">
+            🤖
+        </div>
+
+
+    <!-- Ajouter l'élément audio avec le bon ID -->
+    <audio id="welcomeAudio" src="../../../assets/Ai voice.mp3"></audio>
+    
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <h2>Our Mission for Justice</h2>
+        <p>We stand in solidarity with the Palestinian people and seek to amplify their voices through advocacy, awareness campaigns, and boycotting products that fund injustice. Our mission is to educate, inspire action, and support those who need it the most.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="service-card">
+            <h3>Awareness Campaigns</h3>
+            <p>We raise awareness about the ongoing humanitarian crisis in Palestine through education and media campaigns.</p>
+        </div>
+        <div class="service-card">
+            <h3>Community Support</h3>
+            <p>We partner with humanitarian organizations to provide aid, supplies, and resources to those affected.</p>
+        </div>
+        <div class="service-card">
+            <h3>Advocacy & Action</h3>
+            <p>We advocate for policy changes and support movements that strive for justice, peace, and equality.</p>
+        </div>
+    </section>
+
+    <app-contact></app-contact>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Solidarity with Palestine. Designed with ❤️ for a better future. <a href="#">Privacy Policy</a></p>
+    </footer>
+</div>

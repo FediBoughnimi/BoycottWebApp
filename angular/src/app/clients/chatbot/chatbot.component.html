@@ -1,0 +1,18 @@
+<div id="chat-container">
+  <h1>Boycottini</h1>
+  <p id="intro">Find alternative products and join the cause for a fairer future.</p>
+
+  <div id="chat-history">
+    <div *ngFor="let chat of chatHistory">
+      <div [ngClass]="chat.type">{{ chat.message }}</div>
+    </div>
+  </div>
+
+  <form (submit)="onSubmit()">
+    <input type="text" [(ngModel)]="userInput" name="userInput" placeholder="Enter product to boycott..." required>
+    <button type="submit" [disabled]="loading">Send</button>
+  </form>
+</div>
+<div id="loader" *ngIf="loading">
+<img src="../../../assets/loader.gif" width="150px" alt="Loading...">
+</div>

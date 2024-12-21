@@ -1,0 +1,113 @@
+<app-side-bar></app-side-bar>
+<div class="main-content">
+    <div class="product-list">
+        <h2>Products Grid</h2>
+        <div class="products">
+          <div *ngFor="let product of products" class="product-card">
+            <img *ngIf="imageMap.has(product.id)" [src]="getImageUrl(imageMap.get(product.id))" height="50" width="50"/><br><br>   
+            <h3>{{ product.name }}</h3>
+            <h4>BarCode: {{ product.barcode }}</h4>
+            <h4>Category: {{ product.category.name }}</h4>
+            <p>
+              {{ product.raison }}
+            
+            </p>
+            <div class="alternative-products">
+              <h3>Alternative Products: {{ product.alternative }}</h3>
+            </div>
+            <div class="actions">
+              <button (click)="editEtudiant(product)">Edit</button>
+              <button (click)="toggleShareContainer(product)" >Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+</div>
+
+
+
+<div *ngIf="showEditContainer" class="modal-overlay">
+  <div class="share-container" style="max-width: 800px; max-height: 90vh; overflow-y: auto; margin: auto;">
+    <!-- Contenu de partage -->
+    <button class="close-button" (click)="closeModif()">Close</button>
+
+    <div class="modal-body">
+      <div class="container-xl px-4 mt-4" >
+          <div class="row">
+              <div class="col-xl-4">
+                  <div class="card mb-4 mb-xl-0">
+                      <div class="card-header">Photo de profil</div>
+                      <div class="card-body text-center">
+                        <img class="img-account-profile rounded-circle mb-2"  [src]="selectedFile" alt="Selected Image" >
+                        <input class="form-control" type="file" (change)="onFileSelected($event)" />
+                      </div>
+                  </div>
+              </div>    
+              <div class="col-xl-8">
+                  <div class="card mb-4">
+                      <div class="card-header">Détails de la catégorie</div>
+                      <div class="card-body">
+                          <form>
+                              <div class="mb-3">
+                                <label class="small mb-1" for="name">Nom</label>
+                                <input class="form-control" id="name" type="text" [(ngModel)]="productToUpdate.name" name="name">
+                              </div>
+                              <div class="mb-3">
+                                  <label class="small mb-1" for="barcode">Barcode</label>
+                                  <input class="form-control" id="barcode" type="text" [(ngModel)]="productToUpdate.barcode" name="barcode">
+                                </div>
+                                <div class="mb-3">
+                                  <label class="small mb-1" for="brand">Brand</label>
+                                  <input class="form-control" id="brand" type="text" [(ngModel)]="productToUpdate.brand" name="brand">
+                                </div>
+                                <div class="mb-3">
+                                  <label class="small mb-1" for="raison">Raison</label>
+                                  <input class="form-control" id="raison" type="text" [(ngModel)]="productToUpdate.raison" name="raison">
+                                </div>
+                                <div class="mb-3">
+                                  <label class="small mb-1" for="alternative">Alternative :</label>
+                                  <input class="form-control" id="alternative" type="text" [(ngModel)]="productToUpdate.alternative" name="alternative">
+                                </div>
+                                <div class="mb-3">
+                                  <label class="small mb-1" for="alternativeSourceLink">Alternative Source:</label>
+                                  <input class="form-control" id="alternativeSourceLink" type="text" [(ngModel)]="productToUpdate.alternativeSourceLink" name="alternativeSourceLink">
+                                </div>
+                                <div class="mb-3">
+                                  <label for="category">Category:</label>
+                                    <select id="category" [(ngModel)]="productToUpdate.category.id" name="category" required>
+                                      <option *ngFor="let category of categories" [ngValue]="category.id">{{category.name}}</option>
+                                    </select>
+                              </div>
+                              
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="modal-footer">
+      <button type="button" class="btn btn-primary" (click)="modifEvent()">Modifier</button>
+      <button type="button" class="btn btn-secondary" (click)="closeModif()">Fermer</button>
+  </div>
+</div>
+      </div>
+
+
+<div *ngIf="showShareContainer" class="modal-overlay">
+  <div class="share-container">
+    <!-- Contenu de partage -->
+    <button class="close-button" (click)="closeDelete()">Close</button>
+
+          <div class="modal-body">
+            <p>Êtes-vous sûr de vouloir supprimer cette product ? Cette action est irréversible.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" (click)="deleteEvent()">Supprimer</button>
+            <button type="button" class="btn btn-secondary" (click)="closeDelete()">Annuler</button>
+          </div>
+        </div>
+      </div>
+

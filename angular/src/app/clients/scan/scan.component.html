@@ -1,0 +1,31 @@
+<div class="page-container">
+    
+  
+    <div class="content-section">
+      <div class="info-section">
+        <h1 class="info-title">Why Boycott Israeli Products?</h1>
+        <p class="info-text">
+          Supporting Palestine through boycotts is a powerful way to contribute to the cause.
+          Here, you can find information about products to avoid and why it's important.
+          By boycotting Israeli products, you can make a statement against the occupation and support Palestinian rights.
+          Your choice matters and can contribute to a greater impact.
+        </p>
+        <button type="button" class="btn btn-primary" (click)="startScan()">Scan</button>
+      </div>
+  
+      <div class="product-info-card" *ngIf="productInfoVisible">
+        <img [src]="productImage" alt="Product Name" class="product-image" height=" 60" width="60"/>
+        <h2>{{ productName }}</h2>
+        <p><strong>Why Boycott:</strong> {{ productReason }}</p>
+        <p><strong>Alternative:</strong> {{ productAlternative }}</p>
+      </div>
+  
+      <div class="error-message" *ngIf="errorVisible">
+        <p>Oops, the product does not exist on our site now. We will check if it should be boycotted.</p>
+      </div>
+    </div>
+    <div *ngIf="scanning">
+        <div id="scanner-container" style="width: 250px; height: 250px;"></div>
+      </div>
+  </div>
+  

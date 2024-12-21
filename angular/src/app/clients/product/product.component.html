@@ -1,0 +1,70 @@
+<div class="search-all-container">
+    <div class="search-all-header">
+        <button class="search-all-back-button" (click)="goBack()"><fa-icon [icon]="faArrowLeft"></fa-icon> Back</button>
+        <input type="text" placeholder="Search Product" class="search-all-search-input" [(ngModel)]="searchTerm" (input)="searchProduct()"/>
+        <button class="search-all-search-button"><fa-icon [icon]="faSearch"></fa-icon></button>
+        <button class="search-all-share-button" (click)="handleShare()"><fa-icon [icon]="faShare"></fa-icon> Share</button>
+    </div>
+    
+    <div class="search-all-social-media">
+        <p>Support our work by following us:</p>
+        <div class="search-all-social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61565480036426" target="_blank" rel="noopener noreferrer">
+                <fa-icon [icon]="faFacebook" class="search-all-icon search-all-facebook"></fa-icon>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                <fa-icon [icon]="faInstagram" class="search-all-icon search-all-instagram"></fa-icon>
+            </a>
+        </div>
+    </div>
+    <div class="search-all-brands-list" *ngIf="filteredProducts.length > 0">
+        <div *ngFor="let product of currentProducts" id="product-{{ product.name }}"  class="search-all-brand-item">
+            <div class="search-all-brand-front">
+                <img *ngIf="imageMap.has(product.id)" [src]="getImageUrl(imageMap.get(product.id))" height="20" width="30"/><br><br>   
+                <span class="search-all-brand-name">{{ product.name }}</span><br>
+                <p>{{product.brand}}</p>
+                <button class="search-all-why-button" (click)="toggleShareContainer(product)">Why?</button>
+                <button class="search-all-alternative-button" (click)="handleAlternative(product)">Alternative</button>
+            </div>
+            <div class="search-all-brand-back">
+                <button class="search-all-back-arrow" (click)="handleAlternative(product)">
+                    <fa-icon [icon]="faArrowLeft"></fa-icon>
+                </button>
+                <p>Alternative Product Information for {{ product.name }}</p>
+            </div>
+        </div>
+        </div>
+    <div *ngIf="filteredProducts.length === 0" class="no-category" style="text-align: center;">
+        <p>No products found.</p>
+      </div>
+      
+    <div class="search-all-pagination">
+        <button (click)="paginate(currentPage - 1)" [disabled]="currentPage === 1">&lt;</button>
+        <button *ngFor="let number of pageNumbers" (click)="paginate(number)" [ngClass]="{'search-all-active': number === currentPage}">
+            {{ number }}
+        </button>
+        <button (click)="paginate(currentPage + 1)" [disabled]="currentPage === pageNumbers.length">&gt;</button>
+    </div>
+    
+    
+</div>
+
+<div *ngIf="showShareContainer" class="modal-overlay">
+    <div class="share-container">
+        <button class="close-button" (click)="closeDelete()">×</button>
+        <div class="modal-header">
+            <h2 style="text-align: center;">{{ selectedProduct?.name }}</h2>
+          </div>
+            <div class="modal-body">
+                <h3>Alaternative : {{selectedProduct?.alternative}}</h3>
+                <p>
+                    {{selectedProduct?.raison}}
+                </p>
+                <img *ngIf="imageMap.has(selectedProduct.id)" [src]="getImageUrl(imageMap.get(selectedProduct.id))" height="20" width="30"/><br><br>   
+            </div>
+            <div class="modal-footer">
+                <a class="source-button" [href]="selectedProduct.alternativeSourceLink">VOIR LA SOURCE</a>
+
+            </div>
+          </div>
+        </div>

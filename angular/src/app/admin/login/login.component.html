@@ -1,0 +1,58 @@
+<!-- auth.component.html -->
+<div class="app-container">
+    <div class="content-wrapper" [ngClass]="{ active: showText }">
+      <div class="form-wrapper" [ngClass]="{ active: showLogo }">
+        <img src="assets/Images/logo.png" alt="Logo" class="logo" />
+      </div>
+      <div class="info-section">
+        <h1>Support Palestine. Boycott Israel.</h1>
+        <p>
+          From the river to the sea, Palestine will be "FREE".
+          <br />
+          By supporting Palestine and choosing to boycott Israeli products, you are taking a stand against oppression and injustice. Your everyday choices can contribute to a larger movement for freedom, dignity, and human rights for the Palestinian people.
+        </p>
+      </div>
+    </div>
+    <div class="form-container" [ngClass]="{ active: showForm }">
+      <form [formGroup]="authForm" (ngSubmit)="handleSubmit()">
+        <h2>{{ isLogin ? 'Login' : 'Sign Up' }}</h2>
+        <input
+          type="text"
+          placeholder="Username"
+          formControlName="username"
+          required="{{ !isLogin }}"
+        />
+        <p class="error" *ngIf="errors.username">{{ errors.username }}</p>
+        <input
+          type="email"
+          placeholder="Email"
+          formControlName="email"
+          required
+        />
+        <p class="error" *ngIf="errors.email">{{ errors.email }}</p>
+        <input
+          type="password"
+          placeholder="Password"
+          formControlName="password"
+          required
+        />
+        <p class="error" *ngIf="errors.password">{{ errors.password }}</p>
+        <div *ngIf="!isLogin">
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            formControlName="confirmPassword"
+            required
+          />
+          <p class="error" *ngIf="errors.confirmPassword">{{ errors.confirmPassword }}</p>
+        </div>
+        <button class="primary" type="submit">
+          {{ isLogin ? 'Login' : 'Sign Up' }}
+        </button>
+        <p (click)="toggleForm()">
+          {{ isLogin ? "Don't have an account? Sign Up" : 'Already have an account? Login' }}
+        </p>
+      </form>
+    </div>
+  </div>
+  

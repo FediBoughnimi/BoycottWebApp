@@ -1,0 +1,68 @@
+<app-side-bar></app-side-bar>
+
+<div class="main-content">
+  <div class="add-product">
+    <h2>Create Product</h2>
+    <form >
+     <!-- Product Title -->
+          <div class="form-group">
+            <label for="name">Product Title:</label>
+            <input id="name" [(ngModel)]="product.name" name="name" type="text" required />
+          </div>
+
+          <!-- Barcode Scanner -->
+          <div class="barcode-scanner">
+            <label for="barcode">Barcode:</label>
+            <input id="barcode" [(ngModel)]="product.barcode" name="barcode" type="text" required />
+            <button type="button" (click)="startScan()">Scan</button>
+            <div *ngIf="scanning">
+              <div id="scanner-container" style="width: 300px; height: 300px;"></div>
+            </div>
+          </div>
+
+          <!-- Brand Name -->
+          <div class="form-group">
+            <label for="brand">Brand:</label>
+            <input id="brand" [(ngModel)]="product.brand" name="brand" type="text" required />
+          </div>
+
+          <!-- Raison -->
+          <div class="form-group">
+            <label for="raison">Raison:</label>
+            <input id="raison" [(ngModel)]="product.raison" name="raison" type="text" required />
+          </div>
+
+          <!-- Brand Image -->
+          <div class="form-group">
+            <label for="brandImage">Brand Image:</label>
+            <img class="img-account-profile rounded-circle mb-2"  [src]="selectedImage" height="50" width="50" alt="Selected Image" >
+            <input id="brandImage" type="file" (change)="onFileSelected($event)" name="brandImage" />
+          </div>
+
+          <!-- Alternative Product -->
+          <div class="form-group">
+            <label for="alternative">Alternative Product:</label>
+            <input id="alternative" [(ngModel)]="product.alternative" name="alternative" type="text"/>
+          </div>
+
+          <!-- Alternative Source -->
+          <div class="form-group">
+            <label for="alternativeSourceLink">Alternative Source:</label>
+            <input id="alternativeSourceLink" [(ngModel)]="product.alternativeSourceLink" name="alternativeSourceLink" type="text" />
+          </div>
+
+          <!-- Category Dropdown -->
+          <div class="form-group">
+            <label for="category">Category:</label>
+            <select id="category" [(ngModel)]="selectedCategory" name="category" required>
+              <option *ngFor="let category of categories" [ngValue]="category">{{category.name}}</option>
+            </select>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" (click)="onSubmit()">Submit Product</button>
+
+    
+    </form>
+  </div>
+</div>

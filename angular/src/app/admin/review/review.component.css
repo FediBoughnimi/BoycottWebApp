@@ -1,0 +1,177 @@
+.reviews {
+    background-color: #ffffff; /* Clean white background */
+    padding: 30px;
+    border-radius: 12px; /* Softer corners for a more modern look */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Softer shadow for a smoother effect */
+    margin: 40px auto;
+    width: 70%; /* Set the width to 70% of the page */
+    max-width: 1300px; /* Increased max-width for a spacious layout */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.reviews h2 {
+    color: #333; /* Darker text for better contrast */
+    text-align: center;
+    margin-bottom: 30px; /* More space between title and content */
+    font-size: 1.8rem; /* Larger title for more emphasis */
+}
+
+.review-columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.review-column {
+    flex: 1;
+    padding: 15px;
+}
+
+.review-column h3 {
+    color: #d32f2f; /* Bold red for Palestinian flag theme */
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.2rem; /* Slightly larger for better readability */
+}
+
+.review-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Increased gap for better spacing between reviews */
+}
+
+.review-card {
+    background-color: #f9f9f9; /* Light grey background for cards */
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 25px;
+    position: relative;
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+}
+
+.review-card:hover {
+    transform: translateY(-8px); /* Slight hover lift effect */
+    border-color: #bdbdbd; /* Darker border on hover for emphasis */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1); /* Deeper shadow on hover */
+}
+
+.review-card p {
+    margin: 10px 0;
+    color: #555; /* Lighter text for readability */
+    font-size: 1rem;
+}
+
+.review-card p a {
+    color: #00796b; /* Green from Palestinian flag */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+.review-card p a:hover {
+    color: #004d40; /* Darker green for hover */
+    text-decoration: underline;
+}
+
+.review-card .date {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #757575; /* Lighter grey for date */
+    font-size: 0.9em;
+}
+
+.review-card strong {
+    color: #333; /* Darker text for stronger emphasis */
+}
+
+/* Main content layout adjustments */
+.main-content {
+    flex: 1;
+    margin-left: 15%; /* Adjusting the margin for 70% width */
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+/* Navbar adjustments */
+app-nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    width: 86%;
+    margin-left: 13%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Delete button adjustments */
+.delete-btn {
+    background: transparent;
+    border: none;
+    color: #e74c3c; /* Red color for delete icon */
+    cursor: pointer;
+    font-size: 20px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.delete-btn:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+    color: #c0392b; /* Darker red on hover */
+}
+
+.delete-btn i {
+    margin-right: 5px;
+}
+
+/* Mobile responsiveness adjustments */
+@media (max-width: 768px) {
+    .admin-layout {
+        flex-direction: column;
+        height: 400vh;
+    }
+
+    app-side-bar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main-content {
+        margin: 0;
+    }
+
+    app-nav-bar {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        top: 0;
+        margin-left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .reviews {
+        display: grid;
+        grid-template-columns: 1fr; /* Single column layout for mobile */
+        gap: 20px;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .review-columns {
+        display: block; /* Stack columns vertically */
+    }
+
+    .review-column {
+        margin: 0;
+    }
+
+    .review-card {
+        padding: 20px; /* More compact padding for mobile */
+    }
+}

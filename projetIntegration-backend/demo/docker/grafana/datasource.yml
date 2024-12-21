@@ -1,0 +1,28 @@
+apiVersion: 1
+
+datasources:
+  # Prometheus data source
+  - name: my-Prometheus
+    type: prometheus
+    access: proxy
+    url: http://my-prometheus:9090  # URL to your Prometheus instance
+    editable: false
+    isDefault: true  # Prometheus is marked as the default
+
+  # Loki data source
+  - name: Loki
+    type: loki
+    access: proxy
+    url: http://my-loki:3100  # URL to your Loki instance
+    editable: true
+    # isDefault removed to avoid conflict
+
+  # Tempo data source
+  - name: Tempo
+    type: tempo
+    access: proxy
+    orgid: 1
+    url: http://my-tempo:3200  # URL to your Tempo instance
+    editable: true
+    basicauth: false
+    # isDefault removed to avoid conflict

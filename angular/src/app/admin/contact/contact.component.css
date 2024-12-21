@@ -1,0 +1,122 @@
+/* Styles globaux */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5; /* Couleur douce pour le fond */
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Conteneur de chargement */
+  .loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200vh;
+    color: #555;
+  }
+  
+  .loading-animation {
+    border: 6px solid #e5e5e5;
+    border-top: 6px solid #007bff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .loading-text {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  
+  /* Conteneur principal */
+  .messages-wrapper {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #d32f2f; /* Rouge pour rappeler la Palestine */
+  }
+  
+  /* Titre */
+  .table-header h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 24px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #4caf50; /* Vert Palestine */
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  
+  /* Cartes de messages */
+  .message-card {
+    background: linear-gradient(to right, #ffffff, #f0f0f0);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .message-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .message-card h3 {
+    color: #d32f2f;
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .message-card p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 14px;
+  }
+  
+  /* Bouton supprimer */
+  .delete-button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .delete-button:hover {
+    background-color: #388e3c;
+  }
+  
+  /* Aucun message trouvé */
+  .no-messages {
+    text-align: center;
+    font-size: 16px;
+    color: #757575;
+    margin-top: 50px;
+  }
+  .main-content {
+    flex: 1;
+    margin-left: 200px;
+    flex-direction: column;
+    overflow-y: auto;
+}  

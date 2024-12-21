@@ -1,0 +1,174 @@
+/* General Layout */
+.add-product {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    max-width: 600px;
+    margin: 40px auto;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.add-product h2 {
+    color: #222;
+    font-size: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.add-product form {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-product label {
+    margin-bottom: 12px;
+    color: #555;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.add-product input[type="text"],
+.add-product input[type="number"],
+.add-product select,
+.add-product input[type="file"] {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.add-product input[type="text"]:focus,
+.add-product input[type="number"]:focus,
+.add-product select:focus,
+.add-product input[type="file"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+.add-product input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.add-product button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.add-product button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.add-product label.checkbox-label {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.add-product .barcode-scanner {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.add-product .barcode-scanner input[type="text"] {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-right: 10px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.add-product .barcode-scanner input[type="text"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+.add-product .barcode-scanner button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.add-product .barcode-scanner button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+.error {
+    color: red;
+    font-size: 12px;
+    margin-left: 10px;
+    display: block;
+}
+.main-content {
+    flex: 1;
+    margin-left: 200px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+app-nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    width: 88%;
+    margin-left: 12.5%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 768px) {
+    .admin-layout {
+        flex-direction: column;
+        height: 400vh;
+
+    }
+
+    app-side-bar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .main-content {
+      margin: 0;
+  }
+  
+  /* Navbar */
+  app-nav-bar {
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      top: 0;
+      margin-left: 165px;
+      width: 80%;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+ /* General Layout */
+.add-product{
+    width: 60%;
+    margin-left: 170px;
+}
+  
+   }
+  

@@ -1,0 +1,24 @@
+<app-side-bar></app-side-bar>
+<div class="main-content">
+<div *ngIf="loading" class="loading-container">
+  <div class="loading-animation"></div>
+  <p class="loading-text">Chargement des messages...</p>
+</div>
+
+<div *ngIf="!loading && messages && messages.length > 0" class="messages-wrapper">
+  <div class="table-header">
+    <h2>Liste des Messages</h2>
+  </div>
+  <div class="message-card" *ngFor="let message of messages">
+    <h3>{{ message.name }}</h3>
+    <p><strong>Email :</strong> {{ message.email }}</p>
+    <p><strong>Sujet :</strong> {{ message.subject }}</p>
+    <p><strong>Message :</strong> {{ message.message }}</p>
+    <button class="delete-button" (click)="deleteMessage(message._id)">Supprimer</button>
+  </div>
+</div>
+
+<div *ngIf="!loading && (!messages || messages.length === 0)" class="no-messages">
+  <p>Aucun message trouvé.</p>
+</div>
+</div>

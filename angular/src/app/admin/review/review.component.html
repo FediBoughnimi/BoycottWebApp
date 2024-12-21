@@ -1,0 +1,44 @@
+<app-side-bar></app-side-bar>
+<div class="main-content">
+  <div class="reviews">
+    <h2>Customer Suggestions</h2>
+    <div class="review-columns">
+      
+      <!-- Section pour les avis Boycott -->
+      <div class="review-column">
+        <h3>Boycott</h3>
+        <div class="review-list">
+          <div *ngFor="let review of reviews" class="review-card">
+            <p><strong>Brand Name:</strong> {{ review.brandName }}</p>
+            <p><strong>Proof URL:</strong> <a [href]="review.proofURL" target="_blank" rel="noopener noreferrer">{{ review.proofURL }}</a></p>
+            <p><strong>Reason:</strong> {{ review.reason }}</p>
+            <p class="date">{{ review.date }}</p>
+            <button (click)="deleteReview(review._id)" class="delete-btn">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </div>
+          
+        </div>
+      </div>
+
+      <!-- Section pour les avis Alternative -->
+      <div class="review-column">
+        <h3>Alternative</h3>
+        <div class="review-list">
+          <div *ngFor="let review of alternativeReviews" class="review-card">
+            <p><strong>Brand Name:</strong> {{ review.alternativeBrand }}</p>
+            <p><strong>Proof URL:</strong> <a [href]="review.proofURL" target="_blank" rel="noopener noreferrer">{{ review.proofURL }}</a></p>
+            <p><strong>Reason:</strong> {{ review.reason }}</p>
+            <p class="date">{{ review.date }}</p>
+            <button (click)="deleteReview(review._id)" class="delete-btn">
+              <i class="fas fa-trash-alt"></i> <!-- Trash icon -->
+            </button>
+            
+          </div>
+          
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

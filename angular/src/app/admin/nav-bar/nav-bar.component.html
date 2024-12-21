@@ -1,0 +1,21 @@
+<div class="navbar">
+    <!-- Barre de recherche -->
+    <div class="search-container">
+      <input
+        type="text"
+        placeholder="Search brands"
+        class="search-input"
+        [(ngModel)]="searchQuery"
+      />
+      <button class="search-button" (click)="onSearch()">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+  
+    <!-- Informations utilisateur -->
+    <div class="user-info">
+      <img src="https://via.placeholder.com/30" alt="User" />
+      <span>{{ userName }}</span>
+    </div>
+  </div>
+  

@@ -1,0 +1,42 @@
+<app-side-bar></app-side-bar>
+
+<div class="main-content">
+  <div class="add-product">
+    <h2>Create Categorie</h2>
+    <form [formGroup]="productForm" (ngSubmit)="AjoutEvent()">
+      <div class="form-group">
+        <label for="name">Categorie Title:</label>
+        <input id="name" formControlName="name" type="text" />
+        <div *ngIf="productForm.get('name')!.touched && productForm.get('name')!.invalid">
+          <small class="error" *ngIf="productForm.get('name')!.hasError('required')">Product title is required.</small>
+          <small class="error" *ngIf="productForm.get('name')!.hasError('minlength')">Product title must be at least 3 characters long.</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <input id="description" formControlName="description" type="text" />
+        <div *ngIf="productForm.get('description')!.touched && productForm.get('description')!.invalid">
+          <small class="error" *ngIf="productForm.get('description')!.hasError('required')">Description is required.</small>
+          <small class="error" *ngIf="productForm.get('description')!.hasError('minlength')">Description must be at least 10 characters long.</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="brandImage">Categorie Image:</label>
+        <img *ngIf="selectedImage" class="img-account-profile rounded-circle mb-2" [src]="selectedImage" alt="Image Preview">
+        <input id="brandImage" formControlName="brandImage" type="file" (change)="onFileSelected($event)" />
+        <div *ngIf="productForm.get('brandImage')!.touched && productForm.get('brandImage')!.invalid">
+          <small class="error" *ngIf="productForm.get('brandImage')!.hasError('required')">Brand image is required.</small>
+        </div>
+      </div>
+
+      <div class="form-group checkbox-label">
+        <input id="publish" formControlName="publish" type="checkbox" />
+        <label for="publish">Publish on site</label>
+      </div>
+
+      <button type="submit" [disabled]="productForm.invalid">Submit Product</button>
+    </form>
+  </div>
+</div>

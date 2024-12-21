@@ -1,0 +1,29 @@
+<div class="sidebar">
+    <h2>Admin Dashboard</h2>
+    <nav>
+      <ul>
+        <li>
+          <a (click)="navigate('/admin')">Dashboard</a>
+        </li>
+        <li>
+          <span class="menu-toggle" (click)="toggleProductsMenu()">Products</span>
+          <ul [class.open]="productsMenuOpen" class="submenu">
+            <li><a (click)="navigate('/admin/products/add')">Add Product</a></li>
+            <li><a (click)="navigate('/admin/products/list')">Product List</a></li>
+          </ul>
+        </li>
+        <li>
+          <span class="menu-toggle" (click)="toggleCategoriesMenu()">Categories</span>
+          <ul [class.open]="categoriesMenuOpen" class="submenu">
+            <li><a (click)="navigate('/admin/categories/add')">Add Category</a></li>
+            <li><a (click)="navigate('/admin/categories/list')">Category List</a></li>
+          </ul>
+        </li>
+        <li><a (click)="navigate('/admin/reviews')">Suggestions</a></li>
+        <li><a (click)="navigate('/admin/contact')">Contact</a></li>
+        <li><a (click)="logout()">Logout</a></li>
+
+      </ul>
+    </nav>
+  </div>
+  

@@ -1,0 +1,87 @@
+<app-side-bar></app-side-bar>
+<div class="main-content">
+    <div class="category-list">
+        <h2>Category List</h2>
+        <div class="categories">
+          <div *ngFor="let category of categories" class="category-card">
+            <img *ngIf="imageMap.has(category.id)" [src]="getImageUrl(imageMap.get(category.id))" [alt]="category.name" class="category-image" />
+            <h3>{{ category.name }}</h3>
+            <p>{{ category.description }}</p>
+            <!-- <button type="button" (click)="editEtudiant(category)">
+              Edit
+            </button>&nbsp;&nbsp; -->
+            <div class="actions">
+                <button (click)="editEtudiant(category)">Edit</button>
+
+                <button (click)="toggleShareContainer(category)">
+                    Delete
+                 </button>
+
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div *ngIf="showEditContainer" class="modal-overlay">
+    <div class="share-container">
+      <!-- Contenu de partage -->
+      <button class="close-button" (click)="closeModif()">Close</button>
+
+      <div class="modal-body">
+        <div class="container-xl px-4 mt-4">
+            <div class="row">
+                <div class="col-xl-4">
+                    <div class="card mb-4 mb-xl-0">
+                        <div class="card-header">Photo de profil</div>
+                        <div class="card-body text-center">
+                          <img class="img-account-profile rounded-circle mb-2" [src]="selectedImage" height="50" width="50" alt="Image de la catégorie">
+                          <br><input type="file" class="form-control" (change)="onFileSelected($event)"> <br><br>
+                        </div>
+                    </div>
+                </div>    
+                <div class="col-xl-8">
+                    <div class="card mb-4">
+                        <div class="card-header">Détails de la catégorie</div>
+                        <div class="card-body">
+                            <form>
+                                <div class="mb-3">
+                                  <label class="small mb-1" for="name">Nom</label>
+                                  <input class="form-control" id="name" type="text" [(ngModel)]="categoryToUpdate.name" name="name">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="small mb-1" for="description">Description</label>
+                                    <input class="form-control" id="description" type="text" [(ngModel)]="categoryToUpdate.description" name="description">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="modifEvent()">Modifier</button>
+        <button type="button" class="btn btn-secondary" (click)="closeModif()">Fermer</button>
+    </div>
+</div>
+        </div>
+
+
+<div *ngIf="showShareContainer" class="modal-overlay">
+    <div class="share-container">
+      <!-- Contenu de partage -->
+      <button class="close-button" (click)="closeDelete()">Close</button>
+
+            <div class="modal-body">
+              <p>Êtes-vous sûr de vouloir supprimer cette catégorie ? Cette action est irréversible.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" (click)="deleteEvent()">Supprimer</button>
+              <button type="button" class="btn btn-secondary" (click)="closeDelete()">Annuler</button>
+            </div>
+          </div>
+        </div>
+  

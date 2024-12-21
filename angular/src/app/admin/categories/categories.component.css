@@ -1,0 +1,288 @@
+/* Conteneur principal */
+.category-list {
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+    max-width: 1200px;
+    margin: 40px auto;
+    margin-left: 200px;
+
+  }
+  
+  /* Liste des catégories */
+  .categories {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+  
+  /* Cartes de catégorie */
+  .category-card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+  }
+  
+  .category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Image de catégorie */
+  .category-image {
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 10px;
+        width: 60px;
+        height: 60px;
+        margin-bottom: 10px;
+    
+    
+  }
+  
+  .category-card h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .category-card p {
+    font-size: 14px;
+    color: #777;
+  }
+  .main-content {
+    flex: 1;
+    margin-left: 200px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+app-nav-bar {
+    position: relative;
+    top: 0;
+    z-index: 2;
+    width: 86%;
+    margin-left: 13%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.3s ease-out;
+  position: relative;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.modal-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.modal-content {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+  .brand-image {
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    object-fit: contain;
+  }
+
+  .close-button, .source-button {
+    background-color: #28a745; /* Vert */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .close-button:hover, .source-button:hover {
+    background-color: #218838; /* Vert foncé */
+  }
+
+/* Formulaire de recherche */
+.search-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-form-input {
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.search-form-button {
+  background-color: #28a745; /* Vert */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-form-button:hover {
+  background-color: #218838; /* Vert foncé */
+}
+
+.share-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.share-link {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.share-input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.share-options {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.share-options button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.share-options button:hover {
+  background-color: #0056b3;
+}
+
+.close-button {
+  align-self: flex-end;
+  background-color: #dc3545; /* Rouge */
+}
+
+.close-button:hover {
+  background-color: #c82333; /* Rouge foncé */
+}
+
+.actions {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.actions button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.actions button:hover {
+  background-color: #0056b3;
+}
+  
+@media (max-width: 768px) {
+  .admin-layout {
+      flex-direction: column;
+      height: 400vh;
+
+  }
+
+  app-side-bar {
+      width: 100%;
+      height: auto;
+      position: relative;
+  }
+  .main-content {
+    margin: 0;
+}
+
+/* Navbar */
+app-nav-bar {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    margin-left: 165px;
+    width: 80%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* General Layout */
+.add-product{
+  width: 60%;
+  margin-left: 170px;
+}
+.category-list {
+margin-left: 170px;  
+width: 60%;
+
+}
+
+ }

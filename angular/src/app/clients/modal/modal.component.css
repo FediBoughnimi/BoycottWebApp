@@ -1,0 +1,84 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7); /* Couleur de fond avec un peu plus d'opacité */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Assurez-vous que le modal est au-dessus des autres éléments */
+    transition: opacity 0.3s ease; /* Transition pour un effet d'apparition */
+  }
+  
+  .modal {
+    background: white;
+    padding: 20px;
+    border-radius: 12px; /* Coins arrondis plus marqués */
+    width: 500px; /* Largeur du modal */
+    max-width: 90%; /* Largeur maximale pour les petits écrans */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* Ombre pour le modal */
+    animation: fadeIn 0.3s; /* Animation d'apparition */
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px); /* Légère translation vers le haut au départ */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .close-button {
+    background: transparent;
+    border: none;
+    font-size: 24px; /* Taille de la police du bouton de fermeture */
+    cursor: pointer;
+    float: right; /* Positionner le bouton de fermeture à droite */
+    color: #333; /* Couleur du texte */
+    transition: color 0.3s; /* Transition pour un effet de survol */
+  }
+  
+  .close-button:hover {
+    color: #ff4d4d; /* Couleur au survol */
+  }
+  
+  .modal-header {
+    margin-bottom: 20px; /* Espacement inférieur */
+    font-weight: bold; /* Texte en gras */
+  }
+  
+  .modal-content {
+    margin-bottom: 20px; /* Espacement inférieur pour le contenu du modal */
+    line-height: 1.6; /* Meilleure lisibilité */
+  }
+  
+  .brand-image {
+    max-width: 100%; /* Limite la taille de l'image au conteneur */
+    height: auto; /* Conserve les proportions */
+    border-radius: 8px; /* Coins arrondis pour l'image */
+  }
+  
+  .modal-footer {
+    display: flex;
+    justify-content: flex-end; /* Aligner les boutons à droite */
+  }
+  
+  .source-button {
+    background-color: #007bff; /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte */
+    border: none;
+    border-radius: 5px; /* Coins arrondis */
+    padding: 10px 15px; /* Espacement intérieur */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Transition pour le changement de couleur */
+  }
+  
+  .source-button:hover {
+    background-color: #0056b3; /* Couleur au survol */
+  }
+  

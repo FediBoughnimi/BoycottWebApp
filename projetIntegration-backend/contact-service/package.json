@@ -1,0 +1,28 @@
+{
+  "name": "contact-service",
+  "version": "1.0.0",
+  "description": "A Node.js service for Contact Us with CRUD and mailing functionality",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"No tests available yet.\" && exit 0"
+  },
+  "keywords": [
+    "contact",
+    "service",
+    "mailing",
+    "CRUD"
+  ],
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "keycloak-connect": "^26.0.7",
+    "mongoose": "^8.8.2",
+    "nodemailer": "^6.9.16"
+  }
+}

@@ -1,0 +1,70 @@
+/* General Layout */
+
+  
+  /* Sidebar */
+  .sidebar {
+    width: 25%;
+    height: 100vh;
+    background-color: #1e2a38;
+    color: #fff;
+    padding: 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+   
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+  
+  .sidebar h2 {
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #e63946;
+  }
+  
+  .sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar nav ul li {
+    margin-bottom: 25px;
+  }
+  
+  .sidebar nav ul li a,
+  .sidebar .menu-toggle {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 15px 20px;
+    border-radius: 10px;
+    transition: background 0.3s ease, padding-left 0.3s ease;
+    background-color: #2e3b4e;
+  }
+  
+  .sidebar nav ul li a:hover,
+  .sidebar .menu-toggle:hover {
+    background-color: #e63946;
+    padding-left: 30px;
+  }
+  
+  .submenu {
+    padding-left: 20px;
+    margin-top: 10px;
+    display: none;
+  }
+  
+  .submenu.open {
+    display: block;
+  }
+  
+  .submenu li {
+    margin-bottom: 15px;
+  }
+  
+  .submenu li a {
+    padding: 10px 20px;
+    background-color: #333;
+  }

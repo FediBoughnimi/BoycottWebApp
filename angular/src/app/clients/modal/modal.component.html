@@ -1,0 +1,21 @@
+<div class="modal-overlay" *ngIf="show">
+    <div class="modal">
+      <button class="close-button" (click)="closeModal()">×</button>
+      <div class="modal-header">
+        <h2 style="text-align: center;">{{ brand?.name }}</h2>
+      </div>
+      <div class="modal-content">
+        <h3>Adidas Underwear Partnership</h3>
+        <p>
+          Adidas Underwear has partnered with <strong>Delta Galil Industries, Ltd.</strong> (DELT/Tel Aviv Stock Exchange), the global manufacturer and marketer of branded and private label apparel products for men, women, and children. <strong>Delta Galil Industries</strong> is an <strong>Israeli textile firm headquartered in Tel Aviv</strong>, with plants around the world.
+        </p>
+        <!-- <img [src]="brand?.image" [alt]="brand?.name" class="brand-image" /> -->
+        <img src="../../../assets/Images/ai.png" height="20" width="30" style="text-align: center;"/>
+
+      </div>
+      <div class="modal-footer">
+        <button class="source-button">VOIR LA SOURCE</button>
+      </div>
+    </div>
+  </div>
+  
